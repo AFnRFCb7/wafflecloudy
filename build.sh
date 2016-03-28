@@ -18,6 +18,7 @@ RID=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 8 | head -n 1) &&
 	-e "s#HASH_VALUE#${HASH}#" \
 	-e "s#LUKS_VALUE#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic systems/outstandingsound/luks)#" \
 	-e "s#PASSWORD_VALUE#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic systems/outstandingsound/users/HITXNBTZDSYEJULQ)#" \
+	-e "s#ROOT_PASSWORD#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic systems/outstandingsound/root)#" \
 	-e "s#GPG_VALUE#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic gpg/2016/2018)#" \
 	-e "s#GMAIL_VALUE#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic public/google/passphrase)#" \
 	-e "s#EXTRA0#$(${HOME}/projects/password-store/src/password-store.sh show --phonetic test/extra/0)#" \
